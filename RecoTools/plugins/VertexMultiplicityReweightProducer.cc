@@ -18,8 +18,9 @@ VertexMultiplicityReweightProducer::~VertexMultiplicityReweightProducer()
 void VertexMultiplicityReweightProducer::produce(edm::Event& evt, const edm::EventSetup& es)
 {
   //std::cout << "<VertexMultiplicityReweightProducer::produce (moduleLabel = " << moduleLabel_ << ")>" << std::endl;
-  std::auto_ptr<double> weightPtr(new double((*extractor_)(evt)));
-  evt.put(weightPtr);
+  //std::auto_ptr<double> weightPtr(new double((*extractor_)(evt)));
+  //evt.put(weightPtr);
+  evt.put(std::unique_ptr<double>(new double((*extractor_)(evt))));
 }
 
 #include "FWCore/Framework/interface/MakerMacros.h"

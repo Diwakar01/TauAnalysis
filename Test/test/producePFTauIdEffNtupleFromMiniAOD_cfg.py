@@ -10,7 +10,7 @@ process.MessageLogger.cerr.threshold = cms.untracked.string('INFO')
 process.load('Configuration/Geometry/GeometryRecoDB_cff')
 process.load('Configuration.StandardSequences.MagneticField_cff')
 process.load('Configuration/StandardSequences/FrontierConditions_GlobalTag_cff')
-process.GlobalTag.globaltag = cms.string('76X_mcRun2_asymptotic_v12')
+process.GlobalTag.globaltag = cms.string('92X_upgrade2017_realistic_v10')
 
 process.maxEvents = cms.untracked.PSet(
     input = cms.untracked.int32(-1)
@@ -21,18 +21,14 @@ flist = []
 #for ii in range(1,15):                                                                                              
 #    flist.append('/store/user/bluj/76XMiniAODv2PFTau/v1/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/DYJetsToLL_M-50_76X_mcRun2_asymptotic_v13_MiniAODv2_PFTau_v1/160426_121904/0000/miniAOD-prod_PAT_' + str(ii) + '.root') 
 #bkg
-for ii in range(0,17):                                                                                              
-    if ii in [0, 3, 9, 12]: continue 
-    flist.append('/store/user/bluj/76XMiniAODv2PFTau/v1/QCD_Pt-15to3000_TuneCUETP8M1_Flat_13TeV_pythia8/QCD_Pt-15to3000_76X_mcRun2_asymptotic_v13_MiniAODv2_PFTau_v1/160426_122846/0000/miniAOD-prod_PAT_' +str(ii)+'.root')
+#for ii in range(0,17):                                                                                              
+#    if ii in [0, 3, 9, 12]: continue 
+#    flist.append('/store/user/bluj/76XMiniAODv2PFTau/v1/QCD_Pt-15to3000_TuneCUETP8M1_Flat_13TeV_pythia8/QCD_Pt-15to3000_76X_mcRun2_asymptotic_v13_MiniAODv2_PFTau_v1/160426_122846/0000/miniAOD-prod_PAT_' +str(ii)+'.root')
 
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring(
-        #'/store/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/70000/002ABFCA-A0B9-E511-B9BA-0CC47A57CD6A.root'
-        #'root:://cms-xrd-global.cern.ch///store/relval/CMSSW_7_6_2/RelValQCD_FlatPt_15_3000HS_13/MINIAODSIM/76X_mcRun2_asymptotic_v12-v1/00000/549E843B-979C-E511-A22A-0025905A6092.root',
-        #'root:://cms-xrd-global.cern.ch///store/relval/CMSSW_7_6_2/RelValQCD_FlatPt_15_3000HS_13/MINIAODSIM/76X_mcRun2_asymptotic_v12-v1/00000/7488793C-979C-E511-90DB-0026189438A7.root'
-        #'/store/user/bluj/76XMiniAODv2PFTau/v1/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/DYJetsToLL_M-50_76X_mcRun2_asymptotic_v13_MiniAODv2_PFTau_v1/160426_121904/0000/miniAOD-prod_PAT_1.root'
-        #'/store/user/bluj/76XMiniAODv2PFTau/v1/QCD_Pt-15to3000_TuneCUETP8M1_Flat_13TeV_pythia8/QCD_Pt-15to3000_76X_mcRun2_asymptotic_v13_MiniAODv2_PFTau_v1/160426_122846/0000/miniAOD-prod_PAT_1.root'
-        flist
+        #flist
+        '/store/mc/RunIISummer17MiniAOD/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/MINIAODSIM/92X_upgrade2017_realistic_v10_ext1-v2/10000/0A8639B4-1D94-E711-9C68-02163E0135C6.root'
     ),
 ##    dropDescendantsOfDroppedBranches=cms.untracked.bool(False),
 ##    inputCommands=cms.untracked.vstring(
